@@ -1,0 +1,90 @@
+:root {
+  --primary-color: #DB2777;
+  --secondary-color: #F472B6;
+  --accent-color: #CA8A04;
+  --background-color: #FDF2F8;
+  --text-color: #831843;
+  --card-bg-light: rgba(255, 255, 255, 0.8);
+  --card-bg-dark: rgba(255, 255, 255, 0.1);
+  --border-color-light: rgba(219, 39, 119, 0.2);
+  --border-color-dark: rgba(219, 39, 119, 0.3);
+  --shadow-light: 0 8px 32px rgba(219, 39, 119, 0.1);
+  --shadow-dark: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] {
+  --background-color: #1A1A2E;
+  --text-color: #FDF2F8;
+  --card-bg-light: rgba(255, 255, 255, 0.1);
+  --card-bg-dark: rgba(255, 255, 255, 0.05);
+  --border-color-light: rgba(219, 39, 119, 0.3);
+  --border-color-dark: rgba(219, 39, 119, 0.4);
+  --shadow-light: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-dark: 0 8px 32px rgba(0, 0, 0, 0.7);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Noto Serif TC', serif;
+  font-weight: 600;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+button {
+  font-family: 'Noto Sans TC', sans-serif;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.glass-effect {
+  background: var(--card-bg-light);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color-light);
+  box-shadow: var(--shadow-light);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.glass-effect:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-dark);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
